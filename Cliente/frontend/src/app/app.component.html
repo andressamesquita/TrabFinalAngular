@@ -1,0 +1,62 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-signup></app-signup>
+<app-login></app-login>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+		
+</head>
+<body>
+  <h1>
+    Lista de Apicultores
+  </h1> 
+  <ul>
+    <li *ngFor="let apicultor of apicultores">
+      <h2>{{ apicultor.nome }}</h2>
+    </li>
+  </ul>
+  {{ error?.message }}
+
+  <h1>
+    Lista de Apiarios
+  </h1> 
+
+  <ul>
+    <li *ngFor="let apiario of apiarios">
+      <h2>{{ apiario.apicultor }}</h2>
+    </li>
+  </ul>
+  {{ error?.message }}
+
+  <h1>
+      Lista de Caixas Racionais
+    </h1> 
+  
+    <ul>
+      <li *ngFor="let cr of caixas_racionais">
+        <h2>{{ cr.identificador }}</h2>
+      </li>
+    </ul>
+    {{ error?.message }}
+
+    <h1>
+        Lista de Perdas
+      </h1> 
+    
+      <ul>
+        <li *ngFor="let p of perdas">
+          <h2>{{ p.especie_perdida }}</h2>
+        </li>
+      </ul>
+      {{ error?.message }}
+  
+
+</body>
+
+
+</html>
+
+<app-list></app-list>
+<router-outlet></router-outlet>

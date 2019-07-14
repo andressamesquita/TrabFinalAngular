@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <h1>
+    Lista de apicultores
+  </h1>
+</div>
+<ul>
+  <li *ngFor="let a of apicultores">
+    <h2>{{ a.nome }}x{{a.qtd_apiarios}}
+    <button (click)="delete(a.id)">x</button></h2>
+  </li>
+</ul>
+
+<input #apicultorNome type='text' placeholder='Nome do apicultor'>
+<input #qtdApiarios type='text' placeholder='Qtd apiarios'>
+<input #tipoCriador type='text' placeholder='Tipo criador'>
+<button (click)="add(apicultorNome.value, qtdApiarios.value, tipoCriador.value)">Add</button>
+<p>{{ error?.message }}</p>
+<p *ngIf="error">{{ error?.error | json }}</p>
+
+<button (click)="logout()">deslogar</button>
+
